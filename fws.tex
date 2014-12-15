@@ -1,0 +1,137 @@
+\documentclass[11pt, letterpaper]{scrartcl}
+\usepackage[utf8]{inputenc}
+\usepackage[UKenglish]{babel}
+
+% Switch formatting for the title and subtitle to put the running head first
+% Use Roman family font and Times
+\setkomafont{title}{\normalfont\small}
+\setkomafont{title}{\rmfamily\mdseries}
+\setkomafont{subtitle}{\normalfont\huge}
+\usepackage{mathptmx}
+
+% Titles
+\title{\small Running head: Running head goes here}
+\subtitle{The Actual Title}
+
+% Authors
+% Use \and to separate authors
+% Use \thanks to indicate affiliations
+\author{
+	First Author\thanks{The Affiliation}\, \thanks{Corresponding author: email address} 
+	\and
+	Second Author\footnotemark[2]\thanks{Another Affiliation}
+}
+	
+% Date	
+\date{\today}
+
+% Use natbib to handle references
+% Use round brackets, comma, author-year, no punctuation between author and year, comma between years for identical authors
+\usepackage[]{natbib}
+\bibpunct{(}{)}{,}{a}{}{,} % citation style
+
+% To handle DOIs and other references cleanly
+% Set the typeface of \url to roman because \url is used by natbib to set urls such as DOIs
+% Note that \doi automatically uses roman
+\usepackage{url}
+\urlstyle{rm} 
+\usepackage{doipubmed}
+
+% To adjust the line spacing
+% Double spaced, ragged right (no justification), small paragraph indent
+\usepackage{setspace}
+\doublespacing
+\raggedright\parindent=1.5em
+
+% Line numbers
+\usepackage{lineno}\linenumbers
+
+% Format the section headings
+% Use \section* and \subsection* to subpress numbering as required by Freshwater Science
+\setkomafont{section}{\rmfamily\bfseries\large\center}
+\setkomafont{subsection}{\rmfamily\mdseries\itshape}
+
+
+%%%
+\begin{document}
+
+\maketitle\newpage
+
+\section*{Abstract}
+The abstract text goes here.
+
+\emph{Keywords: the keywords go here}
+
+\newpage
+
+\section*{Introduction}
+
+Text goes here.
+
+\section*{Methods}
+\subsection*{Site description}
+
+Text goes here.
+
+\subsection*{Analyses}
+
+Text goes here.
+
+\section*{Results}
+
+Text goes here.
+
+\section*{Discussion}
+
+Text goes here.
+
+\subsection*{Conclusions}
+
+Text goes here.
+
+\section*{Acknowledgements}
+
+Text goes here.
+
+% Switch to single spacing for the references, tables and figures
+\singlespacing
+
+% The bibliography style is the way the bibliography will look
+\bibliographystyle{fws}
+
+% This changes the default name Bibliography to References
+\renewcommand{\bibname}{References} 
+
+% The bibtex file itself
+\bibliography{references} 
+
+% New page for the tables
+\newpage
+
+\begin{table}[ht]
+\centering
+\caption{An example table.}
+\label{tab:Example}
+\begin{tabular}{l c c}
+\hline
+Site number	&Site name & Description\\
+\hline
+1	&Small town	&Small, well shaded creek\\
+2	&Bridge		&Rapids, open fields\\
+\hline
+\end{tabular}
+\end{table}
+
+% New page for the figures
+\newpage\clearpage
+
+\begin{figure}[t]
+\begin{center}
+%\includegraphics{Figure_map}
+\end{center}
+\caption{Here is a map.}
+\label{Fig:Map}
+\end{figure}
+
+\end{document}
+%%%
